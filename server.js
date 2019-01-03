@@ -18,5 +18,16 @@ app.get('/restaurants/:id/menu-items', (req, res) => {
     });
 });
 
+app.get('/restaurants/:id/suggestions', (req, res) => {
+  const id = req.params.id;
+  axios.get(`http://localhost:3003/restaurants/${id}/suggestions`)
+    .then(response => response.data)
+    .then(data => res.send(data))
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+})
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
