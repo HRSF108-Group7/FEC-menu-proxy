@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/restaurants/:id', (req, res ) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

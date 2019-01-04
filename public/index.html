@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <title>FEC</title>
+    <link href="../styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="Profile"></div>
-    <div id="Menu"></div>
-    <div id="Suggestions"></div>
-    <div id="Reviews"></div>
+    <div class="proxy-container">
+      <div id="Header"></div>
+      <div id="Order" class="proxy-order">
+        <img class="proxy-order-img" src="../order.png">
+        <div class="proxy-order-fixed">
+        </div>
+      </div>
+      <div class="proxy-main">
+        <div id="Profile"></div>
+        <div id="Menu"></div>
+        <div id="Suggestions"></div>
+        <div id="Reviews"></div>
+      </div>
+    </div>
     <!-- <script src="/lib/react.development.js"></script>
     <script src="/lib/react-dom.development.js"></script> -->
     <script src="https://s3.us-east-2.amazonaws.com/fec-profile/bundle.js"></script>
