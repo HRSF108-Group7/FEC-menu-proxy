@@ -60,5 +60,26 @@ app.get('/restaurants/:id/suggestions', (req, res) => {
     });
 });
 
+app.get('/reviews', (req, res) => {
+  axios.get('http://localhost:3004/reviews')
+    .then(response => response.data)
+    .then(data => res.send(data))
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
+app.get('/restaurants/:id/reviews', (req, res) => {
+  const id = req.params.id;
+  axios.get(`http://localhost:3004/restaurants/${id}/reviews`)
+    .then(response => response.data)
+    .then(data => res.send(data))
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
