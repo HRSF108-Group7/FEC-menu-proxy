@@ -13,7 +13,7 @@ app.get('/restaurants/:id', (req, res ) => {
 
 app.get('/restaurants/:id/profile', (req, res) => {
   const id = req.params.id;
-  axios.get(`http://localhost:3001/restaurants/${id}/profile`)
+  axios.get(`http://ec2-18-225-9-230.us-east-2.compute.amazonaws.com/restaurants/${id}/profile`)
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
@@ -51,7 +51,7 @@ app.post('/restaurants/:id/order', (req, res) => {
 
 app.get('/restaurants/:id/suggestions', (req, res) => {
   const id = req.params.id;
-  axios.get(`http://localhost:3003/restaurants/${id}/suggestions`)
+  axios.get(`http://ec2-54-183-207-43.us-west-1.compute.amazonaws.com/restaurants/${id}/suggestions`)
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
@@ -61,7 +61,7 @@ app.get('/restaurants/:id/suggestions', (req, res) => {
 });
 
 app.get('/reviews', (req, res) => {
-  axios.get('http://localhost:3004/reviews')
+  axios.get('http://ec2-54-183-220-92.us-west-1.compute.amazonaws.com/reviews')
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
@@ -72,7 +72,7 @@ app.get('/reviews', (req, res) => {
 
 app.get('/restaurants/:id/reviews', (req, res) => {
   const id = req.params.id;
-  axios.get(`http://localhost:3004/restaurants/${id}/reviews`)
+  axios.get(`http://ec2-54-183-220-92.us-west-1.compute.amazonaws.com/restaurants/${id}/reviews`)
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
