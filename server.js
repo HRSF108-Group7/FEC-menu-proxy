@@ -24,7 +24,7 @@ app.get('/restaurants/:id/profile', (req, res) => {
 
 app.get('/restaurants/:id/menu-items', (req, res) => {
   const id = req.params.id;
-  axios.get(`http://localhost:3002/restaurants/${id}/menu-items`)
+  axios.get(`http://ec2-13-57-210-63.us-west-1.compute.amazonaws.com/restaurants/${id}/menu-items`)
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
@@ -35,7 +35,7 @@ app.get('/restaurants/:id/menu-items', (req, res) => {
 
 app.get('/restaurants/:id/menu-items/:itemId', (req, res) => {
   const {id, itemId} = req.params;
-  axios.get(`http://localhost:3002/restaurants/${id}/menu-items/${itemId}`)
+  axios.get(`http://ec2-13-57-210-63.us-west-1.compute.amazonaws.com/restaurants/${id}/menu-items/${itemId}`)
     .then(response => response.data)
     .then(data => res.send(data))
     .catch(err => {
